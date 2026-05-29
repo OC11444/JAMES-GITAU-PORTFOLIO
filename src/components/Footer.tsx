@@ -1,4 +1,4 @@
-import { Heart, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Heart, Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -6,22 +6,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/yourusername",
+      href: "https://github.com/OC11444",
       label: "GitHub"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/yourusername", 
+      href: "https://www.linkedin.com/in/james-gitau-7b536a200/", 
       label: "LinkedIn"
     },
     {
-      icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com/yourusername",
-      label: "Twitter"
-    },
-    {
       icon: <Mail className="w-5 h-5" />,
-      href: "mailto:contact@example.com",
+      href: "mailto:gitaujames2005@gmail.com",
       label: "Email"
     }
   ];
@@ -48,11 +43,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-gradient">&lt;Dev/&gt;</span>
+              <span className="text-2xl font-bold text-gradient">&lt;James.Gitau/&gt;</span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-              Passionate full-stack developer creating innovative web solutions 
-              with modern technologies. Let's build something amazing together.
+              Bridging the gap between backend development, cloud infrastructure, and network security. Actively seeking junior DevSecOps and IT systems opportunities.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
@@ -91,14 +85,14 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Get In Touch</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>KENYA,NAIROBI</p>
-              <p>contact@example.com</p>
-              <p>+254 703-748-722</p>
+              <p>Nairobi, Kenya</p>
+              <p>gitaujames2005@gmail.com</p>
+              <p>+254 703 748 722</p>
             </div>
             <div className="mt-4">
               <div className="flex items-center gap-2 text-sm">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-muted-foreground">Available for work</span>
+                <span className="text-muted-foreground">Available for internships / roles</span>
               </div>
             </div>
           </div>
@@ -107,9 +101,9 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center text-muted-foreground text-sm">
-            <span>© {currentYear} JAMES.GITAU Developer. Made with</span>
+            <span>© {currentYear} James Gitau Njenga. Built with</span>
             <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" />
-            <span>and lots of coffee.</span>
+            <span>and CLI precision.</span>
           </div>
           
           <div className="flex items-center gap-4 mt-4 md:mt-0 text-sm text-muted-foreground">

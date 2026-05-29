@@ -1,26 +1,26 @@
-import { Code, Database, Palette, Rocket } from 'lucide-react';
+import { Server, Shield, Network, Cloud } from 'lucide-react';
 
 const About = () => {
   const features = [
     {
-      icon: <Code className="w-8 h-8" />,
-      title: "Frontend Development",
-      description: "Creating responsive, interactive user interfaces with React, TypeScript, and modern CSS frameworks."
+      icon: <Network className="w-8 h-8" />,
+      title: "IT Support & Networking",
+      description: "Diagnosing network bottlenecks (OSPF, VLSM), hardware troubleshooting, and managing Linux/Windows environments."
     },
     {
-      icon: <Database className="w-8 h-8" />,
-      title: "Backend Development", 
-      description: "Building robust server-side applications with Flask, Node.js, and database management systems."
+      icon: <Cloud className="w-8 h-8" />,
+      title: "Cloud & DevOps", 
+      description: "Provisioning AWS infrastructure (EC2, RDS, VPCs) and implementing containerization with Docker and CI/CD pipelines."
     },
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "UI/UX Design",
-      description: "Designing intuitive user experiences with attention to accessibility and user-centered design principles."
+      icon: <Shield className="w-8 h-8" />,
+      title: "Systems Security",
+      description: "Applying the CIA triad, threat intelligence, and ethical hacking principles to enforce strict security protocols and access controls."
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: "Performance Optimization",
-      description: "Optimizing applications for speed, SEO, and scalability using modern development practices."
+      icon: <Server className="w-8 h-8" />,
+      title: "Backend Development",
+      description: "Building robust Python, Django, and FastAPI systems with MySQL, baked with a security-first mindset."
     }
   ];
 
@@ -33,19 +33,13 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">About Me</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a passionate full-stack developer with over 3 years of experience crafting digital solutions 
-                that make a difference. My journey started with a curiosity about how websites work, and it has 
-                evolved into a love for creating seamless user experiences and robust backend systems.
+                I am a Bachelor of Information Technology student at The Co-operative University of Kenya, combining a strong foundation in backend development with a deep passion for cloud infrastructure and DevSecOps.
               </p>
               <p>
-                I specialize in modern web technologies, with a particular focus on React for frontend development 
-                and Flask for backend services. I believe in writing clean, maintainable code and following best 
-                practices that ensure scalability and performance.
+                My technical philosophy is built on the <strong>&quot;Shift Left&quot;</strong> principle. Following an intensive 4-month training program at the Kenya Cyber Security Forensics Association (KCFSA), I gained hands-on experience in ethical hacking, threat intelligence, and incident response. I use this knowledge of the CIA triad and threat levels to bake security directly into my backend architectures and AWS cloud deployments from day one.
               </p>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-                or sharing knowledge with the developer community. I'm always excited to take on new challenges and 
-                collaborate on innovative projects.
+              <p className="font-semibold text-foreground">
+                Currently, I am actively seeking DevSecOps intern/junior DevSecOps opportunities in the Nairobi and Kiambu areas.
               </p>
             </div>
 
@@ -83,7 +77,7 @@ const About = () => {
 
         {/* Experience Timeline */}
         <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Experience Journey</h3>
+          <h3 className="text-3xl font-bold text-center mb-12">Professional & Academic Journey</h3>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline Line */}
@@ -94,11 +88,11 @@ const About = () => {
                 <div className="flex items-center">
                   <div className="flex-1 text-right pr-8">
                     <div className="card-glass">
-                      <h4 className="font-semibold text-lg">Senior Full-Stack Developer</h4>
-                      <p className="text-primary">Tech Innovations Inc.</p>
-                      <p className="text-sm text-muted-foreground">2022 - Present</p>
+                      <h4 className="font-semibold text-lg">Independent Developer</h4>
+                      <p className="text-primary">Technical Projects & Automation</p>
+                      <p className="text-sm text-muted-foreground">Jan 2024 - Present</p>
                       <p className="mt-2 text-muted-foreground">
-                        Leading development of enterprise web applications using React and microservices architecture.
+                        Developing tools like Parrot-GPT cyber assistant, automating Linux/Bash backend maintenance, and deploying custom AWS cloud infrastructure (EC2/VPC).
                       </p>
                     </div>
                   </div>
@@ -111,11 +105,11 @@ const About = () => {
                   <div className="relative flex items-center justify-center w-4 h-4 bg-secondary rounded-full border-4 border-background z-10"></div>
                   <div className="flex-1 text-left pl-8">
                     <div className="card-glass">
-                      <h4 className="font-semibold text-lg">Frontend Developer</h4>
-                      <p className="text-primary">Digital Solutions Ltd.</p>
-                      <p className="text-sm text-muted-foreground">2021 - 2022</p>
+                      <h4 className="font-semibold text-lg">Cybersecurity Intensive Training</h4>
+                      <p className="text-primary">Kenya Cyber Security Forensics Association</p>
+                      <p className="text-sm text-muted-foreground">4-Month Program</p>
                       <p className="mt-2 text-muted-foreground">
-                        Developed responsive web applications and improved user experience across multiple platforms.
+                        Completed hands-on training in ethical hacking, threat intelligence, and incident response. Conducted case studies on threat levels and the CIA triad to establish a "Shift Left" DevSecOps mindset.
                       </p>
                     </div>
                   </div>
@@ -124,11 +118,11 @@ const About = () => {
                 <div className="flex items-center">
                   <div className="flex-1 text-right pr-8">
                     <div className="card-glass">
-                      <h4 className="font-semibold text-lg">Junior Developer</h4>
-                      <p className="text-primary">StartUp Ventures</p>
-                      <p className="text-sm text-muted-foreground">2020 - 2021</p>
+                      <h4 className="font-semibold text-lg">Bachelor of Information Technology</h4>
+                      <p className="text-primary">The Co-operative University of Kenya</p>
+                      <p className="text-sm text-muted-foreground">2024 - 2028</p>
                       <p className="mt-2 text-muted-foreground">
-                        Started my professional journey building web applications and learning modern development practices.
+                        Pursuing a comprehensive IT degree with a focus on network administration, secure software development, and systems engineering.
                       </p>
                     </div>
                   </div>

@@ -1,11 +1,23 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react';
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Github,
+  Play,
+  Terminal,
+  Database,
+  ShieldAlert,
+  Cloud,
+  FileCode2,
+  Network
+} from 'lucide-react';
 
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  icon: JSX.Element;
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
@@ -19,62 +31,68 @@ const ProjectCube = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React and Flask, featuring user authentication, payment processing, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      technologies: ["React", "Flask", "PostgreSQL", "Stripe"],
-      liveUrl: "https://demo-ecommerce.netlify.app",
-      githubUrl: "https://github.com/yourusername/ecommerce",
-      color: "from-blue-500 to-purple-600"
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      liveUrl: "https://task-manager-demo.netlify.app",
-      githubUrl: "https://github.com/yourusername/task-manager",
+      title: "Parrot-GPT (AI Cyber Assistant)",
+      description:
+        "A terminal-based utility utilizing Python to securely automate local operating system command workflows, incorporating rigid input validation and permission blocks.",
+      icon: <Terminal className="w-24 h-24 mb-4 opacity-90 drop-shadow-lg" />,
+      technologies: ["Python", "Linux", "Automation", "Security"],
+      liveUrl: "https://youtu.be/n165TtI_aLQ?si=m9ybqNpn42XThhE0",
+      githubUrl: "https://github.com/OC11444/cyber-assistant.git",
       color: "from-green-500 to-teal-600"
     },
     {
+      id: 2,
+      title: "Collaborative Task Manager",
+      description:
+        "A full-stack system featuring user management workflows, role-based access permissions, and detailed error logging for API request-response communication.",
+      icon: <Database className="w-24 h-24 mb-4 opacity-90 drop-shadow-lg" />,
+      technologies: ["Django", "React", "MySQL", "Docker", "AWS"],
+      liveUrl: "https://oc11444.github.io/academic-task-manager/",
+      githubUrl: "https://github.com/OC11444/collab_task_manager.git",
+      color: "from-blue-500 to-purple-600"
+    },
+    {
       id: 3,
-      title: "Weather Dashboard",
-      description: "A responsive weather application with location-based forecasts, interactive maps, and historical weather data visualization.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop",
-      technologies: ["React", "Python", "OpenWeather API", "Chart.js"],
-      liveUrl: "https://weather-dash-demo.netlify.app",
-      githubUrl: "https://github.com/yourusername/weather-dashboard",
+      title: "AWS VPC Security Architecture",
+      description:
+        "Designed custom cloud VPC networks utilizing private/public subnet isolation and strict firewall Security Groups to ensure secure data pipelines.",
+      icon: <ShieldAlert className="w-24 h-24 mb-4 opacity-90 drop-shadow-lg" />,
+      technologies: ["AWS", "VPC", "Networking", "Security Groups"],
+      liveUrl: "https://github.com/OC11444/aws-vpc-from-scratch.git",
+      githubUrl: "https://github.com/OC11444/aws-vpc-from-scratch.git",
       color: "from-orange-500 to-red-600"
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "A modern portfolio website showcasing projects, skills, and experience with smooth animations and responsive design.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Three.js"],
-      liveUrl: "https://portfolio-demo.netlify.app",
-      githubUrl: "https://github.com/yourusername/portfolio",
+      title: "AWS EC2 & RDS Infrastructure",
+      description:
+        "Provisioned cloud servers (EC2) and established secure data pipelines to relational storage engines (AWS RDS MySQL) for enterprise applications.",
+      icon: <Cloud className="w-24 h-24 mb-4 opacity-90 drop-shadow-lg" />,
+      technologies: ["AWS EC2", "AWS RDS", "MySQL", "Cloud"],
+      liveUrl: "https://github.com/OC11444/aws-launching-ec2-tutorial.git",
+      githubUrl: "https://github.com/OC11444/aws-launching-ec2-tutorial.git",
       color: "from-purple-500 to-pink-600"
     },
     {
       id: 5,
-      title: "Social Media App",
-      description: "A social media platform with user profiles, posts, comments, and real-time messaging functionality.",
-      image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=400&h=300&fit=crop",
-      technologies: ["React", "Express", "MongoDB", "Socket.io"],
-      liveUrl: "https://social-app-demo.netlify.app",
-      githubUrl: "https://github.com/yourusername/social-app",
+      title: "Backend Automation Scripts",
+      description:
+        "Developed a suite of custom Python and Bash scripts to automate backend maintenance tasks, check live database states, and scan environment dependencies.",
+      icon: <FileCode2 className="w-24 h-24 mb-4 opacity-90 drop-shadow-lg" />,
+      technologies: ["Python", "Bash", "Automation", "MySQL"],
+      liveUrl: "https://github.com/OC11444/collab_task_manager/blob/main/check_db.py",
+      githubUrl: "https://github.com/OC11444/collab_task_manager/blob/main/scan_deps.py",
       color: "from-cyan-500 to-blue-600"
     },
     {
       id: 6,
-      title: "Data Analytics Tool",
-      description: "A comprehensive data analytics dashboard with interactive charts, data visualization, and export capabilities.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-      technologies: ["React", "D3.js", "Python", "Pandas"],
-      liveUrl: "https://analytics-demo.netlify.app",
-      githubUrl: "https://github.com/yourusername/analytics-tool",
+      title: "Enterprise Network Simulation",
+      description:
+        "Designed and simulated multi-device LAN/WAN network topologies. Configured enterprise hardware, dynamic OSPF routing, and applied VLSM subnetting strategies.",
+      icon: <Network className="w-24 h-24 mb-4 opacity-90 drop-shadow-lg" />,
+      technologies: ["Cisco Packet Tracer", "OSPF", "VLSM", "Routing"],
+      liveUrl: "https://github.com/OC11444",
+      githubUrl: "https://github.com/OC11444",
       color: "from-indigo-500 to-purple-600"
     }
   ];
@@ -82,34 +100,22 @@ const ProjectCube = () => {
   useEffect(() => {
     if (isAutoRotating) {
       const interval = setInterval(() => {
-        setCurrentFace((prev) => (prev + 1) % 6);
-      }, 4000);
+        setCurrentFace((prev) => (prev + 1) % projects.length);
+      }, 5000); // slightly slower rotation so recruiters can read
       return () => clearInterval(interval);
     }
-  }, [isAutoRotating]);
+  }, [isAutoRotating, projects.length]);
 
-  const rotateCube = (direction: 'next' | 'prev') => {
+  const rotateProject = (direction: 'next' | 'prev') => {
     setIsAutoRotating(false);
     if (direction === 'next') {
-      setCurrentFace((prev) => (prev + 1) % 6);
+      setCurrentFace((prev) => (prev + 1) % projects.length);
     } else {
-      setCurrentFace((prev) => (prev - 1 + 6) % 6);
+      setCurrentFace((prev) => (prev - 1 + projects.length) % projects.length);
     }
     
-    // Resume auto-rotation after 10 seconds
-    setTimeout(() => setIsAutoRotating(true), 10000);
-  };
-
-  const getRotation = () => {
-    const rotations = [
-      'rotateY(0deg)',
-      'rotateY(-90deg)',
-      'rotateY(-180deg)',
-      'rotateY(-270deg)',
-      'rotateX(-90deg)',
-      'rotateX(90deg)'
-    ];
-    return rotations[currentFace];
+    // Resume auto-rotation after interaction
+    setTimeout(() => setIsAutoRotating(true), 15000);
   };
 
   const currentProject = projects[currentFace];
@@ -120,82 +126,80 @@ const ProjectCube = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">Featured Projects</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore my latest work through this interactive 3D showcase. Click the arrows or swipe to rotate the cube and discover different projects.
+            Explore my technical implementations spanning cloud architecture, secure automation, and backend development.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* 3D Cube */}
-          <div className="flex justify-center">
-            <div className="cube-container glow-pulse">
-              <div 
-                className="cube"
-                style={{ transform: getRotation() }}
-              >
-                {projects.map((project, index) => (
-                  <div 
-                    key={project.id}
-                    className={`cube-face cube-face-${
-                      ['front', 'right', 'back', 'left', 'top', 'bottom'][index]
-                    } bg-gradient-to-br ${project.color} p-6 flex flex-col justify-center items-center text-white`}
-                  >
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-32 object-cover rounded-lg mb-4 opacity-90"
-                    />
-                    <h3 className="text-xl font-bold text-center mb-2">{project.title}</h3>
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {project.technologies.slice(0, 2).map((tech) => (
-                        <span key={tech} className="px-2 py-1 bg-white/20 rounded text-xs">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+          
+          {/* STATIC 2D VISUAL CARD (Fixes the black box 3D bug) */}
+          <div className="flex justify-center relative w-full max-w-md mx-auto">
+            {/* The 'key' attribute forces React to re-animate the card when currentFace changes */}
+            <a 
+              key={currentProject.id}
+              href={currentProject.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`w-full aspect-square rounded-2xl bg-gradient-to-br ${currentProject.color} p-8 flex flex-col justify-center items-center text-white shadow-2xl transition-all duration-500 hover:scale-105 group animate-in fade-in zoom-in-95`}
+              title={`Open ${currentProject.title}`}
+            >
+              <div className="flex-1 flex flex-col items-center justify-center w-full">
+                <div className="transform group-hover:scale-110 transition-transform duration-300">
+                  {currentProject.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-center mt-6 group-hover:text-white/90 transition-colors">
+                  {currentProject.title}
+                </h3>
+              </div>
+
+              <div className="flex flex-wrap gap-2 justify-center mt-auto pt-6">
+                {currentProject.technologies.slice(0, 3).map((tech) => (
+                  <span key={tech} className="px-3 py-1.5 bg-black/25 rounded-full text-xs font-semibold tracking-wide">
+                    {tech}
+                  </span>
                 ))}
               </div>
-              
-              {/* Rotation Controls */}
-              <div className="absolute -left-16 top-1/2 transform -translate-y-1/2">
-                <button
-                  onClick={() => rotateCube('prev')}
-                  className="p-3 bg-card border border-border rounded-full hover:bg-muted transition-colors shadow-lg"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-              </div>
-              <div className="absolute -right-16 top-1/2 transform -translate-y-1/2">
-                <button
-                  onClick={() => rotateCube('next')}
-                  className="p-3 bg-card border border-border rounded-full hover:bg-muted transition-colors shadow-lg"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
+            </a>
+            
+            {/* Navigation Arrows positioned on the sides of the static card */}
+            <div className="absolute -left-5 md:-left-8 top-1/2 transform -translate-y-1/2 z-10">
+              <button
+                onClick={() => rotateProject('prev')}
+                className="p-3 bg-background border border-border rounded-full hover:bg-muted transition-colors shadow-xl"
+              >
+                <ChevronLeft className="w-6 h-6 text-foreground" />
+              </button>
+            </div>
+            <div className="absolute -right-5 md:-right-8 top-1/2 transform -translate-y-1/2 z-10">
+              <button
+                onClick={() => rotateProject('next')}
+                className="p-3 bg-background border border-border rounded-full hover:bg-muted transition-colors shadow-xl"
+              >
+                <ChevronRight className="w-6 h-6 text-foreground" />
+              </button>
             </div>
           </div>
 
-          {/* Project Details */}
-          <div className="card-glow">
+          {/* PROJECT DETAILS PANEL */}
+          <div className="card-glow z-20">
             <div className="flex items-center gap-4 mb-6">
               <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${currentProject.color}`}></div>
-              <h3 className="text-2xl font-bold">{currentProject.title}</h3>
+              <h3 className="text-2xl font-bold text-foreground">{currentProject.title}</h3>
             </div>
             
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
               {currentProject.description}
             </p>
 
-            <div className="mb-6">
-              <h4 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
+            <div className="mb-8">
+              <h4 className="text-sm font-bold text-foreground mb-4 uppercase tracking-wider">
                 Technologies Used
               </h4>
               <div className="flex flex-wrap gap-2">
                 {currentProject.technologies.map((tech) => (
                   <span 
                     key={tech}
-                    className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium"
+                    className="px-4 py-2 bg-muted text-muted-foreground rounded-lg text-sm font-medium border border-border/50"
                   >
                     {tech}
                   </span>
@@ -208,35 +212,40 @@ const ProjectCube = () => {
                 href={currentProject.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-hero flex items-center justify-center"
+                className="btn-hero flex items-center justify-center py-3"
               >
-                <ExternalLink className="mr-2 w-4 h-4" />
-                Live Demo
+                {currentProject.liveUrl.includes('youtu.be') ? (
+                  <Play className="mr-2 w-5 h-5" />
+                ) : (
+                  <ExternalLink className="mr-2 w-5 h-5" />
+                )}
+                {currentProject.liveUrl.includes('youtu.be') ? 'Watch Demo' : 'Live Demo / Docs'}
               </a>
               <a
                 href={currentProject.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-ghost flex items-center justify-center"
+                className="btn-ghost flex items-center justify-center py-3"
               >
-                <Github className="mr-2 w-4 h-4" />
+                <Github className="mr-2 w-5 h-5" />
                 View Code
               </a>
             </div>
 
             {/* Project Navigation Dots */}
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="flex justify-center gap-3 mt-10">
               {projects.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => {
                     setCurrentFace(index);
                     setIsAutoRotating(false);
-                    setTimeout(() => setIsAutoRotating(true), 10000);
+                    setTimeout(() => setIsAutoRotating(true), 15000);
                   }}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentFace ? 'bg-primary' : 'bg-muted hover:bg-muted-foreground'
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentFace ? 'bg-primary scale-125' : 'bg-muted hover:bg-primary/50'
                   }`}
+                  aria-label={`Go to project ${index + 1}`}
                 />
               ))}
             </div>
